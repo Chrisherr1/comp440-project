@@ -1,14 +1,21 @@
-import session from 'express-session';
-
 // MySQL session store to persist session data in the MySQL database,
 // Basically creates a table in the MySQL database to store session data, 
 // allowing sessions to persist across server restarts and be shared across multiple server instances,
-
-import MySQLStore from 'express-mysql-session';
+import session from 'express-session';
+import MySQLStoreFactory from 'express-mysql-session';
 import pool from '../config/db.js';
 
+const MySQLStore = MySQLStoreFactory(session);
 // Session store configuration using MySQL
 const sessionStore = new MySQLStore({}, pool);
+
+sessionStore.onReady()
+    .then(() => {
+        console.log('MySQL session store is ready');
+    })
+    .catch((error) => {
+        console.error('MySQL session store failed:',error);
+    });
 
 // Session middleware
 export default function sessionMiddleware() {
