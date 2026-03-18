@@ -1,0 +1,14 @@
+CREATE DATABASE IF NOT EXISTS comp440;
+USE comp440;
+
+CREATE TABLE IF NOT EXISTS user(
+    username  VARCHAR(50)  PRIMARY KEY,
+    password  VARCHAR(255) NOT NULL,
+    firstName VARCHAR(50)  NOT NULL,
+    lastName  VARCHAR(50)  NOT NULL,
+    email     VARCHAR(255) NOT NULL UNIQUE,
+    phone     VARCHAR(20) UNIQUE
+);
+
+
+
