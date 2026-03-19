@@ -60,6 +60,7 @@ comp440-project/
 ### 1. Install dependencies
 
 ```bash
+Go to project directory for this ~/comp440-project
 npm install
 ```
 
