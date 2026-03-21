@@ -21,7 +21,7 @@ form.addEventListener('submit', async (event) => {
         const data = await response.json();
 
         if (response.status === 200) {
-            window.location.href = '/home.html'; // Redirect to home/dashboard
+            window.location.href = '/home'; // Redirect to home/dashboard
         } else {
             errorMessage.textContent = data.message;
         }

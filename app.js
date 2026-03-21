@@ -58,7 +58,6 @@ app.use(morgan('dev'));
 
 // Serve static frontend files
 app.use(express.static('public')); // Lets the browser download CSS, JS, Images
-app.use(express.static('views'));  // Lets the browser load static HTML files
 
 // Sessions Middleware
 app.use(sessionMiddleware());

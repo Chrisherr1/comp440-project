@@ -9,7 +9,7 @@ logoutBtn.addEventListener('click', async () => {
 
         if (response.status === 200) {
             // If successful, send them back to the login page
-            window.location.href = '/login.html';
+            window.location.href = '/';
         } else {
             console.error('Failed to log out');
         }

@@ -41,7 +41,7 @@ form.addEventListener('submit', async (event) => {
 
         // 3. Handle result
         if (response.status === 201) {
-            window.location.href = '/login.html'; // Redirect on success
+            window.location.href = '/'; // Redirect on success
         } else {
             errorMessage.textContent = data.message; // Show backend error
         }
