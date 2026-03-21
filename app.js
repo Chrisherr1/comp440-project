@@ -56,6 +56,10 @@ app.use(express.urlencoded({extended : true}));
 // It helps in monitoring and debugging HTTP requests and responses during development.
 app.use(morgan('dev'));
 
+// Serve static frontend files
+app.use(express.static('public')); // Lets the browser download CSS, JS, Images
+app.use(express.static('views'));  // Lets the browser load static HTML files
+
 // Sessions Middleware
 app.use(sessionMiddleware());
 

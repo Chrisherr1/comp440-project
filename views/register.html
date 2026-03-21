@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div id="register-container">
+        <h1>Create Account</h1>
+        <form id="signin-form">
+            <div>
+                <label for="username">Username:</label><br>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <br>
+            <div>
+                <label for="password">Password:</label><br>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <br>
+            <div>
+                <label for="confirm-password">Confirm Password:</label><br>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+            </div>
+            <br>
+            <div>
+                <label for="fname">First Name</label><br>
+                <input type="text" id="fname" name="fname" required>
+            </div>
+            <br>
+            <div>
+                <label for="lname">Last Name</label><br>
+                <input type="text" id="lname" name="lname" required>
+            </div>
+            <br>
+            <div>
+                <label for="email">Email</label><br>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <br>
+            <div>
+                <label for="phone">Phone-Number</label><br>
+                <input type="text" id="phone" name="phone" required>
+            </div>
+            <p id="error-message"></p>
+            <p>
+                Already have an account?
+                <a href="./login.html"> Log-in</a>
+            </p>
+            <button type="submit">Sign Up</button>
+        </form>
+    </div>
+    <script src="/js/register.js"></script> 
+</body>
+</html>

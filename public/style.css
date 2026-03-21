@@ -1,0 +1,33 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#login-container {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(196, 196, 196);
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 300px;
+    border-radius: 5%;
+}
+
+#register-container {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(196, 196, 196);
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    height: 600px;
+    border-radius: 5%;
+}
+
+#error-message {
+    color: red;
+}
+
