@@ -2,17 +2,19 @@
 
 A Node.js MVC-style web application with user authentication using Express, MySQL, and server-side sessions. Includes a simple frontend built with HTML, CSS, and JavaScript.
 
+## Youtube Links
+    **Part 1:** https://youtu.be/-R__Od3O9Cc
 ---
 
 ## Tech Stack
 
-- **Backend:** Node.js, Express (ES Modules)  
-- **Database:** MySQL (mysql2)  
-- **Auth:** Sessions (express-session + express-mysql-session)  
-- **Security:** Helmet (CSP), CORS  
-- **Logging:** Morgan  
-- **Validation:** Zod (env validation)  
-- **Frontend:** HTML, CSS, JavaScript  
+- **Backend:** Node.js, Express (ES Modules)
+- **Database:** MySQL (mysql2)
+- **Auth:** Sessions (express-session + express-mysql-session)
+- **Security:** Helmet (CSP), CORS
+- **Logging:** Morgan
+- **Validation:** Zod (env validation)
+- **Frontend:** HTML, CSS, JavaScript
 
 ---
 
