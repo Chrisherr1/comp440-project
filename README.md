@@ -3,7 +3,7 @@
 A Node.js MVC-style web application with user authentication using Express, MySQL, and server-side sessions. Includes a simple frontend built with HTML, CSS, and JavaScript.
 
 ## Youtube Links
-    **Part 1:** https://youtu.be/-R__Od3O9Cc
+- **Part 1:** `https://youtu.be/-R__Od3O9Cc`
 ---
 
 ## Tech Stack
