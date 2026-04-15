@@ -2,6 +2,7 @@ import authRoutes from './authRoutes.js';
 import pageRoutes from './pageRoutes.js';
 import rentalUnitRoutes from './rentalUnitRoutes.js';
 import reviewRoutes from './reviewRoutes.js';
+import queryRoutes from './queryRoutes.js';
 
 export default function router(app) {
 
@@ -21,6 +22,10 @@ export default function router(app) {
     // Review routes
     // Handles routes like '/api/v1/reviews'
     app.use('/api/v1/reviews', reviewRoutes);
+
+    // Query routes
+    // Handles routes like '/api/v1/queries/most-expensive-by-feature'
+    app.use('/api/v1/queries', queryRoutes);
 
 
 }
