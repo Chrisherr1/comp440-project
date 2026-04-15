@@ -14,6 +14,9 @@ class PageController {
     this.getHomePage = this.getHomePage.bind(this);
     this.getLoginPage = this.getLoginPage.bind(this);
     this.getRegisterPage = this.getRegisterPage.bind(this);
+    this.getPostRentalPage = this.getPostRentalPage.bind(this);
+    this.getSearchPage = this.getSearchPage.bind(this);
+    this.getWriteReviewPage = this.getWriteReviewPage.bind(this);
     }
     // Handles request for the home page.
     getHomePage(req, res) {
@@ -28,6 +31,21 @@ class PageController {
     // Handles request for the registration page.
     getRegisterPage(req, res) {
         const filePath = path.join(viewsPath, 'register.html');
+        res.sendFile(filePath);
+    }
+    // Handles request for the post rental page.
+    getPostRentalPage(req, res) {
+        const filePath = path.join(viewsPath, 'post-rental.html');
+        res.sendFile(filePath);
+    }
+    // Handles request for the search page.
+    getSearchPage(req, res) {
+        const filePath = path.join(viewsPath, 'search.html');
+        res.sendFile(filePath);
+    }
+    // Handles request for the write review page.
+    getWriteReviewPage(req, res) {
+        const filePath = path.join(viewsPath, 'write-review.html');
         res.sendFile(filePath);
     }
 

@@ -10,7 +10,7 @@ class UserRepository {
     //finds the user by username
     async findByUsername (username){
         const [rows] = await pool.query(
-        'SELECT * FROM user WHERE username = ?',[username]
+        'SELECT * FROM users WHERE username = ?',[username]
         );
         return rows[0] || null;
     }
@@ -18,7 +18,7 @@ class UserRepository {
     //find user by email
     async findByEmail (email){
         const[rows] = await pool.query(
-        'SELECT * FROM user WHERE email = ?',[email]
+        'SELECT * FROM users WHERE email = ?',[email]
         );
         return rows[0] || null;
     }
@@ -26,7 +26,7 @@ class UserRepository {
     //find user by phone
     async findByPhone(phone) {
         const[rows] = await pool.query(
-        'SELECT * FROM user WHERE phone = ?',[phone]
+        'SELECT * FROM users WHERE phone = ?',[phone]
         );
         return rows[0] || null;
     }
@@ -34,7 +34,7 @@ class UserRepository {
     //insert new user into database
     async createUser(username,password,firstName,lastName,email,phone){
         const [result] = await pool.query(
-        'INSERT INTO user (username,password,firstName,lastName,email,phone) values (?,?,?,?,?,?)',[username,password,firstName,lastName,email,phone]
+        'INSERT INTO users (username,password,firstName,lastName,email,phone) values (?,?,?,?,?,?)',[username,password,firstName,lastName,email,phone]
         );
         //result.affectedRows shows what was affected and is built into mysql2 import
         //used after INSERT,UPDATE,DELETE

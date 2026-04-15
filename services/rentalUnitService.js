@@ -11,7 +11,7 @@ class RentalUnitService {
         }
         
         // Create the rental unit and get back its generated ID
-        const rentalId = await rentalUnitRepository.createRentalUnit(username, title, city, state, description, price_per_night);
+        const rentalId = await rentalUnitRepository.createRentalUnit(username, title, city, state, price_per_night, description);
 
         // Add features to the rental unit
         for (const featureName of features) {

@@ -4,10 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
-<body>
-    <h1>Welcome</h1>
-    <button id="logout-btn">Log Out</button>
+<body class="app-page">
+
+    <nav class="app-nav">
+        <a class="brand" href="/home">RentFinder</a>
+        <div class="nav-links">
+            <a href="/home" class="active">Home</a>
+            <a href="/post-rental">Post Rental</a>
+            <a href="/search">Search</a>
+            <a href="/write-review">Write Review</a>
+            <button class="logout-btn" id="logout-btn">Logout</button>
+        </div>
+    </nav>
+
+    <div class="app-content">
+        <div class="app-card">
+            <h1>Welcome back!</h1>
+            <p style="color:#555; margin-bottom:24px;">What would you like to do today?</p>
+            <a href="/post-rental" style="display:block; margin-bottom:12px;">
+                <button class="btn-primary" type="button">Post a Rental Unit</button>
+            </a>
+            <a href="/search" style="display:block; margin-bottom:12px;">
+                <button class="btn-primary" type="button">Search Rentals</button>
+            </a>
+            <a href="/write-review" style="display:block;">
+                <button class="btn-primary" type="button">Write a Review</button>
+            </a>
+        </div>
+    </div>
+
     <script src="/js/home.js"></script>
 </body>
 </html>
