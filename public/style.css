@@ -238,6 +238,16 @@ table.results-table td {
 table.results-table tbody tr:nth-child(even) { background-color: #f8f9fb; }
 table.results-table tbody tr:hover { background-color: #eef1f5; }
 
+/* Queries page sections */
+.query-section {
+    margin-bottom: 24px;
+}
+.query-section h2 {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
 #login-container {
     display: flex;
     flex-direction: column;

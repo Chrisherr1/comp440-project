@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Queries</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body class="app-page">
+
+    <nav class="app-nav">
+        <a class="brand" href="/home">RentFinder</a>
+        <div class="nav-links">
+            <a href="/home">Home</a>
+            <a href="/post-rental">Post Rental</a>
+            <a href="/search">Search</a>
+            <a href="/write-review">Write Review</a>
+            <a href="/queries" class="active">Queries</a>
+            <button class="logout-btn" id="logout-btn">Logout</button>
+        </div>
+    </nav>
+
+    <div class="app-content">
+
+        <!-- Query 1: Most Expensive Rental Per Feature -->
+        <div class="app-card wide query-section">
+            <h2>Most Expensive Rental Unit per Feature</h2>
+            <div class="search-row">
+                <button class="btn-search" id="q1-btn">Load Results</button>
+            </div>
+            <p class="app-error" id="q1-error"></p>
+            <div class="table-wrapper" id="q1-wrapper" style="display:none;">
+                <table class="results-table">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Title</th>
+                            <th>Posted By</th>
+                            <th>City</th>
+                            <th>State</th>
+                            <th>$/Night</th>
+                        </tr>
+                    </thead>
+                    <tbody id="q1-body"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Query 2: Users Who Posted Two Units Same Day with Different Features -->
+        <div class="app-card wide query-section">
+            <h2>Users Who Posted Two Units Same Day with Different Features</h2>
+            <div class="search-row">
+                <input type="text" id="q2-feature-x" placeholder="Feature X (e.g. pool)">
+                <input type="text" id="q2-feature-y" placeholder="Feature Y (e.g. gym)">
+                <button class="btn-search" id="q2-btn">Search</button>
+            </div>
+            <p class="app-error" id="q2-error"></p>
+            <div class="table-wrapper" id="q2-wrapper" style="display:none;">
+                <table class="results-table">
+                    <thead>
+                        <tr>
+                            <th>Username</th>
+                        </tr>
+                    </thead>
+                    <tbody id="q2-body"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Query 3: Rental Units Where All Reviews Are Excellent or Good -->
+        <div class="app-card wide query-section">
+            <h2>Rental Units by User Where All Reviews Are Excellent or Good</h2>
+            <div class="search-row">
+                <input type="text" id="q3-username" placeholder="Username">
+                <button class="btn-search" id="q3-btn">Search</button>
+            </div>
+            <p class="app-error" id="q3-error"></p>
+            <div class="table-wrapper" id="q3-wrapper" style="display:none;">
+                <table class="results-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Title</th>
+                            <th>City</th>
+                            <th>State</th>
+                            <th>$/Night</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody id="q3-body"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Query 4: Users with Most Postings on a Specific Date -->
+        <div class="app-card wide query-section">
+            <h2>Users with Most Postings on a Specific Date</h2>
+            <div class="search-row">
+                <input type="date" id="q4-date">
+                <button class="btn-search" id="q4-btn">Search</button>
+            </div>
+            <p class="app-error" id="q4-error"></p>
+            <div class="table-wrapper" id="q4-wrapper" style="display:none;">
+                <table class="results-table">
+                    <thead>
+                        <tr>
+                            <th>Username</th>
+                            <th>Total Posts</th>
+                        </tr>
+                    </thead>
+                    <tbody id="q4-body"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Query 5: Users Whose Every Review is Poor -->
+        <div class="app-card wide query-section">
+            <h2>Users Whose Every Review is Poor</h2>
+            <div class="search-row">
+                <button class="btn-search" id="q5-btn">Load Results</button>
+            </div>
+            <p class="app-error" id="q5-error"></p>
+            <div class="table-wrapper" id="q5-wrapper" style="display:none;">
+                <table class="results-table">
+                    <thead>
+                        <tr>
+                            <th>Username</th>
+                        </tr>
+                    </thead>
+                    <tbody id="q5-body"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Query 6: Users Whose Rental Units Never Received a Poor Review -->
+        <div class="app-card wide query-section">
+            <h2>Users Whose Rental Units Never Received a Poor Review</h2>
+            <div class="search-row">
+                <button class="btn-search" id="q6-btn">Load Results</button>
+            </div>
+            <p class="app-error" id="q6-error"></p>
+            <div class="table-wrapper" id="q6-wrapper" style="display:none;">
+                <table class="results-table">
+                    <thead>
+                        <tr>
+                            <th>Username</th>
+                        </tr>
+                    </thead>
+                    <tbody id="q6-body"></tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="/js/queries.js"></script>
+</body>
+</html>

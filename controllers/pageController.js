@@ -17,6 +17,7 @@ class PageController {
     this.getPostRentalPage = this.getPostRentalPage.bind(this);
     this.getSearchPage = this.getSearchPage.bind(this);
     this.getWriteReviewPage = this.getWriteReviewPage.bind(this);
+    this.getQueriesPage = this.getQueriesPage.bind(this);
     }
     // Handles request for the home page.
     getHomePage(req, res) {
@@ -46,6 +47,11 @@ class PageController {
     // Handles request for the write review page.
     getWriteReviewPage(req, res) {
         const filePath = path.join(viewsPath, 'write-review.html');
+        res.sendFile(filePath);
+    }
+    // Handles request for the queries page.
+    getQueriesPage(req, res) {
+        const filePath = path.join(viewsPath, 'queries.html');
         res.sendFile(filePath);
     }
 

@@ -26,4 +26,7 @@ router.get('/search', PageController.getSearchPage);
 // Route for Write Review Page (protected)
 router.get('/write-review', requireAuth, PageController.getWriteReviewPage);
 
+// Route for Queries Page (protected)
+router.get('/queries', requireAuth, PageController.getQueriesPage);
+
 export default router;

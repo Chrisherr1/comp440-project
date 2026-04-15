@@ -25,7 +25,7 @@ form.addEventListener('submit', async (event) => {
 
     const payload = {
         rental_id: parseInt(document.getElementById('rental-id').value),
-        rating: parseInt(document.getElementById('rating').value),
+        rating: document.getElementById('rating').value,
         comment: document.getElementById('comment').value
     };
 
