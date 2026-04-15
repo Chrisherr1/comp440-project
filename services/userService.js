@@ -8,7 +8,7 @@ import argon2 from 'argon2';
 //  Models only throws errors and returns data. No HTTP
 //  creates and returns the DTO to controller
 //  controllers deal with HTTP and take what the model gives and sends a response based on that
-class UserModel{
+class UserService{
     // Register a user
     async register(username,password,firstName,lastName,email,phone){
 
@@ -60,6 +60,6 @@ class UserModel{
     
 }
 
-export default new UserModel();
+export default new UserService();
 
 // next stop AuthController

@@ -1,4 +1,4 @@
-import userModel from '../models/userModel.js';
+import userService from '../services/userService.js';
 
 
 class AuthController {
@@ -14,7 +14,7 @@ class AuthController {
         }
 
         try {
-            const user = await userModel.register(username,password,firstName,lastName,email,phone);
+            const user = await userService.register(username,password,firstName,lastName,email,phone);
             return res.status(201).json({message: 'User Registered Successfully' , user });
         }catch (error) {
             return res.status(400).json({message: error.message});
@@ -29,7 +29,7 @@ class AuthController {
         const {username , password} = req.body;
 
         try {
-            const user = await userModel.login(username,password);
+            const user = await userService.login(username,password);
 
             // store user in session
             req.session.user = user;
