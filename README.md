@@ -5,8 +5,8 @@ A Node.js MVC-style web application for online apartment rentals built with Expr
 ## YouTube Links
 
 - **Part 1:** https://youtu.be/-R__Od3O9Cc
-- **Part 2:** `coming soon`
-- **Part 3:** `coming soon`
+- **Part 2:** https://youtu.be/jHvRbQfQn9c
+- **Part 3:** https://youtu.be/ISMeo6-AMZM
 
 ---
 
