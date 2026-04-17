@@ -5,8 +5,8 @@ A Node.js MVC-style web application for online apartment rentals built with Expr
 ## YouTube Links
 
 - **Part 1:** https://youtu.be/-R__Od3O9Cc
-- **Part 2:** `coming soon`
-- **Part 3:** `coming soon`
+- **Part 2:** https://youtu.be/jHvRbQfQn9c
+- **Part 3:** https://youtu.be/ISMeo6-AMZM
 
 ---
 
@@ -39,7 +39,7 @@ comp440-project/
 ├── database/
 │   └── schema.sql
 ├── dtos/
-│   └── userDTO.js
+│   └── UserDTO.js
 ├── middleware/
 │   ├── errorHandler.js
 │   └── sessionMiddleware.js
@@ -67,11 +67,10 @@ comp440-project/
 │   ├── post-rental.html
 │   ├── search.html
 │   ├── write-review.html
-│   └── [phase 3 query pages]
+│   └── queries.html
 ├── public/
-│   ├── css/
 │   ├── js/
-│   └── images/
+│   └── style.css
 ├── app.js
 ├── index.js
 └── .env
@@ -127,6 +126,20 @@ http://localhost:3000/api/v1/
 
 ---
 
+## Page Routes
+
+| Route | Description |
+|-------|-------------|
+| GET / | Login page |
+| GET /register | Register page |
+| GET /home | Home page |
+| GET /search | Search rental units |
+| GET /post-rental | Post a new rental unit |
+| GET /write-review | Write a review |
+| GET /queries | Phase 3 query results |
+
+---
+
 ## API Endpoints
 
 ### Auth
@@ -166,11 +179,11 @@ http://localhost:3000/api/v1/
 ## Database Schema
 
 ```sql
-users(username PK, password, firstName, lastName, email UNIQUE, phone UNIQUE)
-rental_units(rental_id PK AUTO_INCREMENT, username FK, title, city, state, description, price_per_night, post_date)
+users(username PK, password, firstName, lastName, email UNIQUE, phone UNIQUE nullable)
+rental_units(rental_id PK AUTO_INCREMENT, username FK, title, city, state, description nullable, price_per_night, post_date)
 features(feat_id PK AUTO_INCREMENT, feature_name)
-rental_features(rental_id FK, feat_id FK)
-reviews(username FK, rental_id FK, rating ENUM('Excellent','Good','Fair','Poor'), comment, post_date)
+rental_features(rental_id FK, feat_id FK, PK composite)
+reviews(username FK, rental_id FK, PK composite, rating ENUM('Excellent','Good','Fair','Poor'), comment nullable, post_date)
 ```
 
 ---
