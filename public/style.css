@@ -1,276 +1,415 @@
+/* ── Reset & Base ── */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
 body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
+    background-color: #fff;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: #111;
 }
 
-/* ── Shared new-page styles ── */
-* { box-sizing: border-box; }
+/* ── Login & Register ── */
+#login-container,
+#register-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    justify-content: center;
+    align-items: stretch;
+    border: 1px solid #111;
+    padding: 40px 36px;
+}
 
+#login-container  { width: 340px; }
+#register-container { width: 360px; }
+
+#login-container h1,
+#register-container h1 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 28px;
+    color: #111;
+    letter-spacing: -0.5px;
+}
+
+#login-container label,
+#register-container label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #111;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+}
+
+#login-container input,
+#register-container input {
+    width: 100%;
+    padding: 9px 10px;
+    border: 1px solid #ccc;
+    border-radius: 0;
+    font-size: 0.92rem;
+    background: #fff;
+    font-family: inherit;
+    color: #111;
+    transition: border-color 0.1s;
+    margin-top: 5px;
+}
+
+#login-container input:focus,
+#register-container input:focus {
+    outline: none;
+    border-color: #111;
+}
+
+#login-container button,
+#register-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #111;
+    color: #fff;
+    border: none;
+    border-radius: 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 8px;
+    letter-spacing: 0.3px;
+    transition: background 0.1s;
+    font-family: inherit;
+}
+
+#login-container button:hover,
+#register-container button:hover {
+    background-color: #333;
+}
+
+#login-container p,
+#register-container p {
+    font-size: 0.82rem;
+    color: #666;
+    margin-top: 14px;
+}
+
+#login-container a,
+#register-container a {
+    color: #111;
+    font-weight: 600;
+}
+
+#error-message {
+    color: #c00;
+    font-size: 0.82rem;
+    margin-top: 10px;
+}
+
+/* ── App Pages ── */
 body.app-page {
     display: block;
     height: auto;
     min-height: 100vh;
-    background-color: #f0f2f5;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    color: #222;
+    background-color: #fff;
 }
 
 /* Navbar */
 nav.app-nav {
-    background-color: #2c3e50;
-    padding: 0 32px;
+    background-color: #fff;
+    border-bottom: 1px solid #111;
+    padding: 0 40px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 56px;
+    height: 52px;
     position: sticky;
     top: 0;
     z-index: 100;
 }
+
 nav.app-nav .brand {
-    color: #fff;
-    font-size: 1.1rem;
-    font-weight: 600;
-    letter-spacing: 0.5px;
+    color: #111;
+    font-size: 1rem;
+    font-weight: 700;
     text-decoration: none;
+    letter-spacing: -0.4px;
+    text-transform: uppercase;
 }
+
 nav.app-nav .nav-links {
     display: flex;
-    gap: 8px;
+    gap: 0;
     align-items: center;
 }
+
 nav.app-nav .nav-links a {
-    color: #cdd3d8;
+    color: #666;
     text-decoration: none;
     padding: 6px 14px;
-    border-radius: 4px;
-    font-size: 0.9rem;
-    transition: background 0.15s, color 0.15s;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: color 0.1s;
+    border-bottom: 2px solid transparent;
 }
-nav.app-nav .nav-links a:hover,
+
+nav.app-nav .nav-links a:hover {
+    color: #111;
+}
+
 nav.app-nav .nav-links a.active {
-    background-color: #3d5166;
-    color: #fff;
+    color: #111;
+    font-weight: 600;
+    border-bottom: 2px solid #111;
 }
+
 nav.app-nav .logout-btn {
     background: none;
-    border: 1px solid #7f8c8d;
-    color: #cdd3d8;
+    border: 1px solid #ccc;
+    color: #666;
     padding: 5px 14px;
-    border-radius: 4px;
+    border-radius: 0;
     cursor: pointer;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    font-weight: 500;
     margin-left: 16px;
-    transition: border-color 0.15s, color 0.15s;
+    transition: border-color 0.1s, color 0.1s;
+    font-family: inherit;
 }
+
 nav.app-nav .logout-btn:hover {
-    border-color: #e74c3c;
-    color: #e74c3c;
+    border-color: #c00;
+    color: #c00;
 }
 
 /* Page content wrapper */
 .app-content {
-    padding: 40px 24px;
+    padding: 48px 40px;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 /* Card */
 .app-card {
     background: #fff;
-    border-radius: 10px;
     padding: 36px 40px;
-    max-width: 480px;
+    max-width: 500px;
     margin: 0 auto;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    border: 1px solid #111;
 }
+
 .app-card.wide {
-    max-width: 900px;
+    max-width: 100%;
 }
+
 .app-card h1 {
-    font-size: 1.4rem;
-    margin-bottom: 24px;
-    color: #2c3e50;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 28px;
+    color: #111;
+    letter-spacing: -0.4px;
 }
 
 /* Form groups */
 .form-group {
-    margin-bottom: 18px;
+    margin-bottom: 20px;
 }
+
 .form-group label {
     display: block;
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     font-weight: 600;
     margin-bottom: 6px;
-    color: #444;
+    color: #111;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
 }
+
 .form-group input,
 .form-group select,
 .form-group textarea {
     width: 100%;
-    padding: 9px 12px;
+    padding: 9px 10px;
     border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 0.95rem;
-    transition: border-color 0.15s;
-    background: #fafafa;
+    border-radius: 0;
+    font-size: 0.92rem;
+    background: #fff;
     font-family: inherit;
+    color: #111;
+    transition: border-color 0.1s;
 }
+
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: #2c3e50;
-    background: #fff;
+    border-color: #111;
 }
+
 .form-group textarea {
     resize: vertical;
-    min-height: 80px;
+    min-height: 90px;
 }
+
 .form-hint {
     font-size: 0.75rem;
-    color: #888;
-    margin-top: 4px;
+    color: #999;
+    margin-top: 5px;
 }
+
 .form-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 14px;
+    gap: 16px;
 }
 
 /* Buttons */
 .btn-primary {
     width: 100%;
     padding: 10px;
-    background-color: #2c3e50;
+    background-color: #111;
     color: #fff;
     border: none;
-    border-radius: 6px;
-    font-size: 1rem;
+    border-radius: 0;
+    font-size: 0.9rem;
     font-weight: 600;
     cursor: pointer;
     margin-top: 8px;
-    transition: background 0.15s;
+    letter-spacing: 0.3px;
+    transition: background 0.1s;
+    font-family: inherit;
 }
-.btn-primary:hover { background-color: #3d5166; }
+
+.btn-primary:hover { background-color: #333; }
 
 .btn-search {
-    padding: 9px 24px;
-    background-color: #2c3e50;
+    padding: 9px 22px;
+    background-color: #111;
     color: #fff;
     border: none;
-    border-radius: 6px;
-    font-size: 0.95rem;
+    border-radius: 0;
+    font-size: 0.88rem;
     font-weight: 600;
     cursor: pointer;
-    transition: background 0.15s;
+    transition: background 0.1s;
     white-space: nowrap;
+    font-family: inherit;
+    letter-spacing: 0.3px;
 }
-.btn-search:hover { background-color: #3d5166; }
+
+.btn-search:hover { background-color: #333; }
 
 .btn-review {
-    padding: 4px 12px;
-    background-color: #27ae60;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
+    padding: 4px 10px;
+    background-color: #fff;
+    color: #111;
+    border: 1px solid #111;
+    border-radius: 0;
     font-size: 0.8rem;
+    font-weight: 600;
     cursor: pointer;
     text-decoration: none;
     display: inline-block;
+    transition: background 0.1s, color 0.1s;
+    letter-spacing: 0.2px;
 }
-.btn-review:hover { background-color: #219a52; }
+
+.btn-review:hover {
+    background-color: #111;
+    color: #fff;
+}
 
 /* Messages */
 #error-message,
 .app-error {
-    color: #e74c3c;
-    font-size: 0.85rem;
-    margin: 8px 0;
+    color: #c00;
+    font-size: 0.82rem;
+    margin: 10px 0;
     min-height: 18px;
 }
+
 #success-message,
 .app-success {
-    color: #27ae60;
-    font-size: 0.85rem;
-    margin: 8px 0;
+    color: #090;
+    font-size: 0.82rem;
+    margin: 10px 0;
     min-height: 18px;
 }
 
 /* Search row */
 .search-row {
     display: flex;
-    gap: 12px;
-    margin-bottom: 28px;
+    gap: 10px;
+    margin-bottom: 24px;
+    align-items: center;
 }
+
 .search-row input {
     flex: 1;
-    padding: 9px 12px;
+    padding: 9px 10px;
     border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 0.95rem;
-    background: #fafafa;
+    border-radius: 0;
+    font-size: 0.92rem;
+    background: #fff;
     font-family: inherit;
+    color: #111;
+    transition: border-color 0.1s;
 }
+
+.search-row input[type="date"] {
+    flex: 0 0 auto;
+    width: 180px;
+}
+
 .search-row input:focus {
     outline: none;
-    border-color: #2c3e50;
-    background: #fff;
+    border-color: #111;
 }
 
 /* Results table */
 .table-wrapper { overflow-x: auto; }
+
 table.results-table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 0.9rem;
+    font-size: 0.88rem;
 }
+
 table.results-table thead tr {
-    background-color: #2c3e50;
-    color: #fff;
+    border-bottom: 2px solid #111;
 }
-table.results-table th,
-table.results-table td {
+
+table.results-table th {
     padding: 10px 14px;
     text-align: left;
-    border-bottom: 1px solid #e5e7eb;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    color: #111;
+    background: #fff;
 }
-table.results-table tbody tr:nth-child(even) { background-color: #f8f9fb; }
-table.results-table tbody tr:hover { background-color: #eef1f5; }
+
+table.results-table td {
+    padding: 11px 14px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+    color: #333;
+}
+
+table.results-table tbody tr:hover { background-color: #f9f9f9; }
 
 /* Queries page sections */
 .query-section {
-    margin-bottom: 24px;
+    margin-bottom: 32px;
 }
+
 .query-section h2 {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
+    font-weight: 700;
     margin-bottom: 20px;
-    color: #2c3e50;
+    color: #111;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
 }
-
-#login-container {
-    display: flex;
-    flex-direction: column;
-    background-color: rgb(196, 196, 196);
-    justify-content: center;
-    align-items: center;
-    width: 300px;
-    height: 300px;
-    border-radius: 5%;
-}
-
-#register-container {
-    display: flex;
-    flex-direction: column;
-    background-color: rgb(196, 196, 196);
-    justify-content: center;
-    align-items: center;
-    width: 350px;
-    height: 600px;
-    border-radius: 5%;
-}
-
-#error-message {
-    color: red;
-}
-
