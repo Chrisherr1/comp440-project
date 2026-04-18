@@ -2,6 +2,8 @@
 
 A Node.js MVC-style web application for online apartment rentals built with Express, MySQL, and server-side sessions. Includes a frontend built with HTML, CSS, and JavaScript.
 
+![RentFinder Login](public/images/RentFinder.gif)
+
 ## YouTube Links
 
 - **Part 1:** https://youtu.be/-R__Od3O9Cc
