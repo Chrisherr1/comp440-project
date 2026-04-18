@@ -1,6 +1,6 @@
 # RentFinder - Database Class Project
 
-A Node.js MVC-style web application for online apartment rentals built with Express, MySQL, and server-side sessions. Includes a frontend built with HTML, CSS, and JavaScript.
+A Node.js MVC-style web application using layered architecure for online apartment rentals built with Express, MySQL, and server-side sessions. Includes a frontend built with HTML, CSS, and JavaScript.
 
 ![RentFinder Login](public/images/RentFinder.gif)
 
